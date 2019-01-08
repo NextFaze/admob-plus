@@ -22,7 +22,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         if bannerView != nil {
             bannerView.isHidden = false
         } else {
-            bannerView = GADBannerView(adSize: self.adSize)
+            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
             addBannerViewToView(bannerView)
             bannerView.rootViewController = plugin.viewController
         }
@@ -44,12 +44,24 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
 
     func addBannerViewToView(_ bannerView: UIView) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.black
         view.addSubview(bannerView)
-        if #available(iOS 11.0, *) {
-            positionBannerInSafeArea(bannerView)
-        } else {
-            positionBanner(bannerView)
-        }
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: plugin.viewController.bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
         self.resizeWebView()
     }
 
@@ -57,37 +69,12 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     func positionBannerInSafeArea(_ bannerView: UIView) {
         let guide: UILayoutGuide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate(
-            [bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
-             bannerView.bottomAnchor.constraint(equalTo: position == "top" ? guide.topAnchor : guide.bottomAnchor,
-                                                constant: position == "top" ? self.plugin.webView.safeAreaInsets.top : 0)]
+            [
+                guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
+                guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
+                guide.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor)
+            ]
         )
-    }
-
-    func positionBanner(_ bannerView: UIView) {
-        view.addConstraint(NSLayoutConstraint(item: bannerView,
-                                              attribute: .centerX,
-                                              relatedBy: .equal,
-                                              toItem: view,
-                                              attribute: .centerX,
-                                              multiplier: 1,
-                                              constant: 0))
-        if position == "top" {
-            view.addConstraint(NSLayoutConstraint(item: bannerView,
-                                                  attribute: .top,
-                                                  relatedBy: .equal,
-                                                  toItem: plugin.viewController.topLayoutGuide,
-                                                  attribute: .top,
-                                                  multiplier: 1,
-                                                  constant: 0))
-        } else {
-            view.addConstraint(NSLayoutConstraint(item: bannerView,
-                                                  attribute: .bottom,
-                                                  relatedBy: .equal,
-                                                  toItem: plugin.viewController.bottomLayoutGuide,
-                                                  attribute: .top,
-                                                  multiplier: 1,
-                                                  constant: 0))
-        }
     }
 
     func resizeWebView() {
