@@ -3,7 +3,7 @@ package admob.plugin;
 import android.os.Bundle;
 
 import com.google.ads.mediation.admob.AdMobAdapter;
-import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.AdSize;
 
 import org.json.JSONArray;
@@ -50,9 +50,9 @@ public class Action {
         return this.opts.optString("adUnitID");
     }
 
-    public AdRequest buildAdRequest() {
+    public PublisherAdRequest buildAdRequest() {
         Bundle extras = new Bundle();
-        AdRequest.Builder builder = new AdRequest.Builder();
+        PublisherAdRequest.Builder builder = new PublisherAdRequest.Builder();
         JSONArray testDevices = this.opts.optJSONArray("testDevices");
         if (testDevices != null) {
             for (int i = 0; i < testDevices.length(); i++) {
