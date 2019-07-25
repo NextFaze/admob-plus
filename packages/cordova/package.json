@@ -1,6 +1,6 @@
 {
   "name": "nf-banner-cordova-admob-plus",
-  "version": "0.30.1",
+  "version": "0.0.1",
   "description": "Trustable Google AdMob Cordova Plugin",
   "main": "www/admob.js",
   "typings": "www/admob.d.ts",
