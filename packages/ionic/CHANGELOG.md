@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.6](https://github.com/admob-plus/admob-plus/compare/ionic-admob@0.19.5...ionic-admob@0.19.6) (2019-04-28)
+
+**Note:** Version bump only for package ionic-admob
+
+
+
+
+
+## [0.19.5](https://github.com/admob-plus/admob-plus/compare/ionic-admob@0.19.4...ionic-admob@0.19.5) (2019-04-28)
+
+**Note:** Version bump only for package ionic-admob
+
+
+
+
+
+## [0.19.4](https://github.com/admob-plus/admob-plus/compare/ionic-admob@0.19.3...ionic-admob@0.19.4) (2019-04-26)
+
+**Note:** Version bump only for package ionic-admob
+
+
+
+
+
+## [0.19.3](https://github.com/admob-plus/admob-plus/compare/ionic-admob@0.19.1...ionic-admob@0.19.3) (2019-04-11)
+
+**Note:** Version bump only for package ionic-admob
+
+
+
+
+
+## [0.19.2](https://github.com/admob-plus/admob-plus/compare/ionic-admob@0.19.1...ionic-admob@0.19.2) (2019-04-11)
+
+**Note:** Version bump only for package ionic-admob
+
+
+
+
+
+## [0.19.1](https://github.com/admob-plus/admob-plus/compare/ionic-admob@0.19.0...ionic-admob@0.19.1) (2019-03-18)
+
+**Note:** Version bump only for package ionic-admob
+
+
+
+
+
 # [0.19.0](https://github.com/admob-plus/admob-plus/compare/ionic-admob@0.18.1...ionic-admob@0.19.0) (2018-12-18)
 
 

@@ -9,17 +9,21 @@ export default {
   output: {
     file: 'www/admob.js',
     format: 'cjs',
-    sourcemap: true,
+    sourcemap: false,
     exports: 'default',
   },
   plugins: [
     resolve({
-      jsnext: true,
-      main: true,
+      mainFields: ['module', 'main', 'jsnext:main'],
       browser: true,
     }),
     typescript({
       cacheRoot: findCacheDir({ name: 'rts2' }),
+      tsconfigOverride: {
+        compilerOptions: {
+          module: 'es2015',
+        },
+      },
     }),
     commonjs(),
   ],

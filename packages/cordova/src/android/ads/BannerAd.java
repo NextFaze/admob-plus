@@ -5,9 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.doubleclick.PublisherAdView;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
@@ -16,7 +16,7 @@ import admob.plugin.Action;
 import admob.plugin.Events;
 
 public class BannerAd extends AdBase {
-    private AdView adView;
+    private PublisherAdView adView;
     private ViewGroup parentView;
     private AdSize adSize;
     private int gravity;
@@ -42,7 +42,6 @@ public class BannerAd extends AdBase {
                     );
                 }
                 bannerAd.show(action.buildAdRequest());
-
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);
             }
@@ -68,17 +67,27 @@ public class BannerAd extends AdBase {
         return true;
     }
 
-    public void show(AdRequest adRequest) {
+    public void show(PublisherAdRequest adRequest) {
         if (adView == null) {
-            adView = new AdView(plugin.cordova.getActivity());
+            adView = new PublisherAdView(plugin.cordova.getActivity());
             adView.setAdUnitId(adUnitID);
-            adView.setAdSize(adSize);
+            adView.setAdSize(AdSize.BANNER);
             adView.setAdListener(new AdListener(this));
 
             addBannerView(adView);
         } else if (adView.getVisibility() == View.GONE) {
             adView.resume();
             adView.setVisibility(View.VISIBLE);
+        } else {
+            View view = plugin.webView.getView();
+            ViewGroup wvParentView = (ViewGroup) view.getParent();
+            if (parentView != wvParentView) {
+                parentView.removeAllViews();
+                if (parentView.getParent() != null) {
+                    ((ViewGroup)parentView.getParent()).removeView(parentView);
+                }
+                addBannerView(adView);
+            }
         }
 
         adView.loadAd(adRequest);
@@ -136,7 +145,7 @@ public class BannerAd extends AdBase {
         return Events.BANNER_CLICK;
     }
 
-    private void addBannerView(AdView adView) {
+    private void addBannerView(PublisherAdView adView) {
         View view = plugin.webView.getView();
         ViewGroup wvParentView = (ViewGroup) view.getParent();
         if (parentView == null) {
@@ -144,14 +153,13 @@ public class BannerAd extends AdBase {
         }
 
         if (wvParentView != null && wvParentView != parentView) {
-            ViewGroup rootView = (ViewGroup)(view.getParent());
             wvParentView.removeView(view);
             LinearLayout content = (LinearLayout) parentView;
             content.setOrientation(LinearLayout.VERTICAL);
             parentView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 0.0F));
             view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0F));
             parentView.addView(view);
-            rootView.addView(parentView);
+            wvParentView.addView(parentView);
         }
 
         if (gravity == Gravity.TOP) {

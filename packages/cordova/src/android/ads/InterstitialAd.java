@@ -15,6 +15,20 @@ public class InterstitialAd extends AdBase {
         super(id, adUnitID);
     }
 
+    public static boolean executeIsLoadedAction(Action action, CallbackContext callbackContext) {
+        plugin.cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                InterstitialAd interstitialAd = (InterstitialAd) action.getAd();
+
+                PluginResult result = new PluginResult(PluginResult.Status.OK, interstitialAd.isLoaded());
+                callbackContext.sendPluginResult(result);
+            }
+        });
+
+        return true;
+    }
+
     public static boolean executeLoadAction(Action action, CallbackContext callbackContext) {
         plugin.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
@@ -23,7 +37,7 @@ public class InterstitialAd extends AdBase {
                 if (interstitialAd == null) {
                     interstitialAd = new InterstitialAd(action.optId(), action.getAdUnitID());
                 }
-                interstitialAd.load(action.buildAdRequest(), action.getAdUnitID());
+                // interstitialAd.load(action.buildAdRequest(), action.getAdUnitID());
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);
@@ -101,6 +115,10 @@ public class InterstitialAd extends AdBase {
         interstitialAd.setAdListener(new AdListener(this));
 
         interstitialAd.loadAd(adRequest);
+    }
+
+    private boolean isLoaded() {
+        return interstitialAd != null && interstitialAd.isLoaded();
     }
 
     private void show() {

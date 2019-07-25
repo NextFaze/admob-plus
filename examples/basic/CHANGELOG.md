@@ -3,6 +3,86 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.14](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.13...example.admob.basic@0.16.14) (2019-06-05)
+
+**Note:** Version bump only for package example.admob.basic
+
+
+
+
+
+## [0.16.13](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.12...example.admob.basic@0.16.13) (2019-06-02)
+
+**Note:** Version bump only for package example.admob.basic
+
+
+
+
+
+## [0.16.12](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.11...example.admob.basic@0.16.12) (2019-06-01)
+
+**Note:** Version bump only for package example.admob.basic
+
+
+
+
+
+## [0.16.11](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.10...example.admob.basic@0.16.11) (2019-04-28)
+
+**Note:** Version bump only for package example.admob.basic
+
+
+
+
+
+## [0.16.10](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.9...example.admob.basic@0.16.10) (2019-04-28)
+
+**Note:** Version bump only for package example.admob.basic
+
+
+
+
+
+## [0.16.9](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.8...example.admob.basic@0.16.9) (2019-04-26)
+
+**Note:** Version bump only for package example.admob.basic
+
+
+
+
+
+## [0.16.8](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.6...example.admob.basic@0.16.8) (2019-04-11)
+
+**Note:** Version bump only for package example.admob.basic
+
+
+
+
+
+## [0.16.7](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.6...example.admob.basic@0.16.7) (2019-04-11)
+
+**Note:** Version bump only for package example.admob.basic
+
+
+
+
+
+## [0.16.6](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.5...example.admob.basic@0.16.6) (2019-03-23)
+
+**Note:** Version bump only for package example.admob.basic
+
+
+
+
+
+## [0.16.5](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.4...example.admob.basic@0.16.5) (2019-03-18)
+
+**Note:** Version bump only for package example.admob.basic
+
+
+
+
+
 ## [0.16.4](http://github_ratson:admob-plus/admob-plus/compare/example.admob.basic@0.16.3...example.admob.basic@0.16.4) (2018-12-18)
 
 **Note:** Version bump only for package example.admob.basic

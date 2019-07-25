@@ -20,6 +20,10 @@ AdMob Plus is the successor of [cordova-plugin-admob-free](https://github.com/ra
 
 [You can help!](https://admob-plus.github.io/funding.html)
 
+## Disclaimer
+
+This does not affiliate Google, but a community plugin utilize Google AdMob SDKs to provide better developer experience for hybrid applications.
+
 ## License
 
 AdMob Plus is [MIT licensed](./LICENSE).

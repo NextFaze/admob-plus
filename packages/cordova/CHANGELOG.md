@@ -3,6 +3,147 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.29.1...cordova-admob-plus@0.30.0) (2019-06-05)
+
+
+### Bug Fixes
+
+* **cordova-ios:** use safe area layout frame only when banner is visible ([fde16b7](https://github.com/admob-plus/admob-plus/commit/fde16b7))
+
+
+### Features
+
+* **cordova-ios:** resize webview using layout constraints ([c289ac3](https://github.com/admob-plus/admob-plus/commit/c289ac3))
+
+
+
+
+
+## [0.29.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.29.0...cordova-admob-plus@0.29.1) (2019-06-02)
+
+
+### Bug Fixes
+
+* **cordova-ios:** update webview height after banner load ([11732d5](https://github.com/admob-plus/admob-plus/commit/11732d5))
+
+
+
+
+
+# [0.29.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.28.2...cordova-admob-plus@0.29.0) (2019-06-01)
+
+
+### Bug Fixes
+
+* **cordova-ios:** extend black background to safe area ([b294c44](https://github.com/admob-plus/admob-plus/commit/b294c44))
+* **cordova-ios:** fix forChildDirectedTreatment deprecated warning ([de15ea6](https://github.com/admob-plus/admob-plus/commit/de15ea6))
+* **cordova-ios:** fix GADMobileAds.configure deprecated warning ([98fea4a](https://github.com/admob-plus/admob-plus/commit/98fea4a))
+* **cordova-ios:** set banner view background to black ([3449e32](https://github.com/admob-plus/admob-plus/commit/3449e32))
+* **cordova-ios:** set unsafe area background to black ([6814bdd](https://github.com/admob-plus/admob-plus/commit/6814bdd))
+
+
+### Features
+
+* **cordova-ios:** resize views on orientation change ([76cabc1](https://github.com/admob-plus/admob-plus/commit/76cabc1))
+* **cordova-ios:** update Google-Mobile-Ads-SDK to v7.44 ([ce74251](https://github.com/admob-plus/admob-plus/commit/ce74251))
+
+
+
+
+
+## [0.28.2](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.28.1...cordova-admob-plus@0.28.2) (2019-04-28)
+
+**Note:** Version bump only for package cordova-admob-plus
+
+
+
+
+
+## [0.28.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.28.0...cordova-admob-plus@0.28.1) (2019-04-28)
+
+**Note:** Version bump only for package cordova-admob-plus
+
+
+
+
+
+# [0.28.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.27.0...cordova-admob-plus@0.28.0) (2019-04-26)
+
+
+### Features
+
+* **cordova-ios:** update Google-Mobile-Ads-SDK to v7.43 ([a359478](https://github.com/admob-plus/admob-plus/commit/a359478))
+
+
+
+
+
+# [0.27.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.25.1...cordova-admob-plus@0.27.0) (2019-04-11)
+
+
+### Bug Fixes
+
+* **cordova-android:** ensuse ready emit only once ([f4aae11](https://github.com/admob-plus/admob-plus/commit/f4aae11))
+
+
+### Features
+
+* **cordova-ios:** update cordova-plugin-add-swift-support ([90fa3d0](https://github.com/admob-plus/admob-plus/commit/90fa3d0))
+* **cordova-ios:** update cordova-plugin-add-swift-support to v2.0.2 ([9ab407f](https://github.com/admob-plus/admob-plus/commit/9ab407f))
+
+
+
+
+
+# [0.26.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.25.1...cordova-admob-plus@0.26.0) (2019-04-11)
+
+
+### Bug Fixes
+
+* **cordova-android:** ensuse ready emit only once ([f4aae11](https://github.com/admob-plus/admob-plus/commit/f4aae11))
+
+
+### Features
+
+* **cordova-ios:** update cordova-plugin-add-swift-support ([90fa3d0](https://github.com/admob-plus/admob-plus/commit/90fa3d0))
+* **cordova-ios:** update cordova-plugin-add-swift-support to v2.0.2 ([9ab407f](https://github.com/admob-plus/admob-plus/commit/9ab407f))
+
+
+
+
+
+## [0.25.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.25.0...cordova-admob-plus@0.25.1) (2019-03-23)
+
+
+### Bug Fixes
+
+* **cordova-ios:** set GADApplicationIdentifier, close [#83](https://github.com/admob-plus/admob-plus/issues/83) ([05520e1](https://github.com/admob-plus/admob-plus/commit/05520e1))
+
+
+
+
+
+# [0.25.0](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.24.1...cordova-admob-plus@0.25.0) (2019-03-18)
+
+
+### Bug Fixes
+
+* **android:** add waiting for ready callback context results ([#81](https://github.com/admob-plus/admob-plus/issues/81)) ([ae90b20](https://github.com/admob-plus/admob-plus/commit/ae90b20))
+* **cordova:** fix adUnitID type ([a51cc0a](https://github.com/admob-plus/admob-plus/commit/a51cc0a))
+* **cordova:** fix banner display after resume, close [#72](https://github.com/admob-plus/admob-plus/issues/72) ([344c037](https://github.com/admob-plus/admob-plus/commit/344c037))
+* **cordova:** fix test ID type ([f1aa7bc](https://github.com/admob-plus/admob-plus/commit/f1aa7bc))
+
+
+### Features
+
+* **cordova:** add interstitial.isLoaded method ([f52a624](https://github.com/admob-plus/admob-plus/commit/f52a624))
+* **cordova:** update Google-Mobile-Ads-SDK ([72350ba](https://github.com/admob-plus/admob-plus/commit/72350ba))
+* **cordova:** update PLAY_SERVICES_VERSION ([5ff6bbf](https://github.com/admob-plus/admob-plus/commit/5ff6bbf))
+
+
+
+
+
 ## [0.24.1](https://github.com/admob-plus/admob-plus/compare/cordova-admob-plus@0.24.0...cordova-admob-plus@0.24.1) (2018-12-18)
 
 

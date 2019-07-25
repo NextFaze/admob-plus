@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "composite": true,
+    "strict": true,
+  }
+}

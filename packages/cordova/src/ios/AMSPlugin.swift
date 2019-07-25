@@ -8,7 +8,7 @@ class AMSPlugin: CDVPlugin {
         super.pluginInitialize()
 
         AMSAdBase.plugin = self
-        GADMobileAds.configure(withApplicationID: getApplicationID())
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
 
     deinit {
@@ -98,6 +98,20 @@ class AMSPlugin: CDVPlugin {
         banner.hide()
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: true)
+        self.commandDelegate!.send(result, callbackId: command.callbackId)
+    }
+
+    @objc(interstitial_is_loaded:)
+    func interstitial_is_loaded(command: CDVInvokedUrlCommand) {
+        guard let opts = command.argument(at: 0) as? NSDictionary,
+            let id = opts.value(forKey: "id") as? Int,
+            let interstitial = AMSAdBase.ads[id] as? AMSInterstitial
+            else {
+                let result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: false)
+                self.commandDelegate!.send(result, callbackId: command.callbackId)
+                return
+        }
+        let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: interstitial.isLoaded())
         self.commandDelegate!.send(result, callbackId: command.callbackId)
     }
 
@@ -193,7 +207,7 @@ class AMSPlugin: CDVPlugin {
             request.testDevices = testDevices
         }
         if let childDirected = opts["childDirected"] as? Bool {
-            request.tag(forChildDirectedTreatment: childDirected)
+            GADMobileAds.sharedInstance().requestConfiguration.tag(forChildDirectedTreatment: childDirected)
         }
         return request
     }

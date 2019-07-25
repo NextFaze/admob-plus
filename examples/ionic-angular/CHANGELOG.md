@@ -3,6 +3,92 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.6](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.18.5...ionic-angular-example@0.18.6) (2019-06-05)
+
+**Note:** Version bump only for package ionic-angular-example
+
+
+
+
+
+## [0.18.5](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.18.4...ionic-angular-example@0.18.5) (2019-06-02)
+
+**Note:** Version bump only for package ionic-angular-example
+
+
+
+
+
+## [0.18.4](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.18.3...ionic-angular-example@0.18.4) (2019-06-01)
+
+**Note:** Version bump only for package ionic-angular-example
+
+
+
+
+
+## [0.18.3](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.18.2...ionic-angular-example@0.18.3) (2019-04-28)
+
+**Note:** Version bump only for package ionic-angular-example
+
+
+
+
+
+## [0.18.2](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.18.1...ionic-angular-example@0.18.2) (2019-04-28)
+
+**Note:** Version bump only for package ionic-angular-example
+
+
+
+
+
+## [0.18.1](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.18.0...ionic-angular-example@0.18.1) (2019-04-26)
+
+**Note:** Version bump only for package ionic-angular-example
+
+
+
+
+
+# [0.18.0](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.16.7...ionic-angular-example@0.18.0) (2019-04-11)
+
+
+### Features
+
+* **cordova-ios:** update cordova-plugin-add-swift-support to v2.0.2 ([9ab407f](http://github_ratson:admob-plus/admob-plus/commits/9ab407f))
+
+
+
+
+
+# [0.17.0](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.16.7...ionic-angular-example@0.17.0) (2019-04-11)
+
+
+### Features
+
+* **cordova-ios:** update cordova-plugin-add-swift-support to v2.0.2 ([9ab407f](http://github_ratson:admob-plus/admob-plus/commits/9ab407f))
+
+
+
+
+
+## [0.16.7](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.16.6...ionic-angular-example@0.16.7) (2019-03-23)
+
+**Note:** Version bump only for package ionic-angular-example
+
+
+
+
+
+## [0.16.6](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.16.5...ionic-angular-example@0.16.6) (2019-03-18)
+
+**Note:** Version bump only for package ionic-angular-example
+
+
+
+
+
 ## [0.16.5](http://github_ratson:admob-plus/admob-plus/compare/ionic-angular-example@0.16.4...ionic-angular-example@0.16.5) (2018-12-18)
 
 **Note:** Version bump only for package ionic-angular-example
