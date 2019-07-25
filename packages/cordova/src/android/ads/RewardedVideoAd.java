@@ -42,7 +42,7 @@ public class RewardedVideoAd extends AdBase {
                 if (rewardedVideoAd == null) {
                     rewardedVideoAd = new RewardedVideoAd(action.optId(), action.getAdUnitID());
                 }
-                rewardedVideoAd.createAndLoad(action.buildAdRequest());
+                // rewardedVideoAd.createAndLoad(action.buildAdRequest());
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);

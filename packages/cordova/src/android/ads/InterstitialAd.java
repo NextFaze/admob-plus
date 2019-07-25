@@ -37,7 +37,7 @@ public class InterstitialAd extends AdBase {
                 if (interstitialAd == null) {
                     interstitialAd = new InterstitialAd(action.optId(), action.getAdUnitID());
                 }
-                interstitialAd.load(action.buildAdRequest(), action.getAdUnitID());
+                // interstitialAd.load(action.buildAdRequest(), action.getAdUnitID());
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                 callbackContext.sendPluginResult(result);
