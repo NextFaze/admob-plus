@@ -3,6 +3,9 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     var adSize: GADAdSize!
     var position: String!
 
+    var bannerBottomConstraint: NSLayoutConstraint!
+    var bannerCenterConstraint: NSLayoutConstraint!
+    
     var view: UIView {
         return self.plugin.viewController.view
     }
@@ -22,7 +25,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
         if bannerView != nil {
             bannerView.isHidden = false
         } else {
-            bannerView = GADBannerView(adSize: self.adSize)
+            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
             addBannerViewToView(bannerView)
             bannerView.rootViewController = plugin.viewController
         }
@@ -38,18 +41,36 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
             bannerView.rootViewController = nil
             bannerView.removeFromSuperview()
             bannerView = nil
+            view.removeConstraints([
+                self.bannerBottomConstraint,
+                self.bannerCenterConstraint
+            ]);
+            self.resizeWebView()
         }
-        self.resizeWebView()
     }
 
     func addBannerViewToView(_ bannerView: UIView) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.black
         view.addSubview(bannerView)
-        if #available(iOS 11.0, *) {
-            positionBannerInSafeArea(bannerView)
-        } else {
-            positionBanner(bannerView)
-        }
+        self.bannerBottomConstraint = NSLayoutConstraint(item: bannerView,
+                            attribute: .bottom,
+                            relatedBy: .equal,
+                            toItem: plugin.viewController.bottomLayoutGuide,
+                            attribute: .top,
+                            multiplier: 1,
+                            constant: 0)
+        self.bannerCenterConstraint = NSLayoutConstraint(item: bannerView,
+                            attribute: .centerX,
+                            relatedBy: .equal,
+                            toItem: view,
+                            attribute: .centerX,
+                            multiplier: 1,
+                            constant: 0)
+        view.addConstraints([
+            self.bannerBottomConstraint,
+            self.bannerCenterConstraint
+        ])
         self.resizeWebView()
     }
 
@@ -57,9 +78,11 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     func positionBannerInSafeArea(_ bannerView: UIView) {
         let guide: UILayoutGuide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate(
-            [bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
-             bannerView.bottomAnchor.constraint(equalTo: position == "top" ? guide.topAnchor : guide.bottomAnchor,
-                                                constant: position == "top" ? self.plugin.webView.safeAreaInsets.top : 0)]
+            [
+                guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
+                guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
+                guide.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor)
+            ]
         )
     }
 
@@ -89,7 +112,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
                                                   constant: 0))
         }
     }
-
+    
     func resizeWebView() {
         var frame = view.frame
         if bannerView != nil {
@@ -117,12 +140,10 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
     }
 
     func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        self.resizeWebView()
         plugin.emit(eventType: AMSEvents.bannerOpen)
     }
 
     func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        self.resizeWebView()
     }
 
     func adViewDidDismissScreen(_ bannerView: GADBannerView) {
