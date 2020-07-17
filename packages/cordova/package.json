@@ -1,6 +1,6 @@
 {
   "name": "nf-cordova-admob-plus",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Trustable Google AdMob Cordova Plugin",
   "main": "www/admob.js",
   "typings": "www/admob.d.ts",
@@ -59,7 +59,7 @@
     "admobpro"
   ],
   "cordova": {
-    "id": "cordova-admob-plus",
+    "id": "nf-cordova-admob-plus",
     "platforms": [
       "android",
       "ios"
